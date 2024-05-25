@@ -72,9 +72,12 @@ Install [`direnv`](https://direnv.net/) and add the `direnv hook` to your
 `.bashrc`:
 
 ```bash
-nix profile add nixpkgs#direnv
-echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
+nix profile install nixpkgs#direnv
+
 # For hooks into shells other than bash see https://direnv.net/docs/hook.html.
+echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
+
+source ~/.bashrc
 ```
 
 Now clone `rules_mojo`, `cd` into it and run `direnv allow`:
